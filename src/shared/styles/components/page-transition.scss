@@ -1,0 +1,134 @@
+@use "../configs" as *;
+
+.page-transition {
+  position: relative;
+  display: grid;
+  gap: 18px;
+  align-items: center;
+  overflow: hidden;
+  width: stretch;
+  margin: 24px 0 10px;
+  padding: 22px;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.074),
+      rgba(255, 255, 255, 0.03)
+    ),
+    rgba(8, 12, 20, 0.42);
+  box-shadow:
+    0 26px 84px rgba(0, 0, 0, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  color: var(--color-white);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.page-transition::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      circle at 82% 24%,
+      color-mix(in srgb, var(--color-accent) 20%, transparent),
+      transparent 34%
+    ),
+    linear-gradient(
+      115deg,
+      transparent 20%,
+      rgba(255, 255, 255, 0.055),
+      transparent 48%
+    );
+  opacity: 0;
+  transition: opacity 180ms ease;
+}
+
+// .page-transition:hover::before {
+//   opacity: 1;
+// }
+
+.page-transition__text,
+.page-transition__actions {
+  position: relative;
+  z-index: 1;
+}
+
+.page-transition__text {
+  max-width: 620px;
+  margin: 0;
+  color: rgba(232, 238, 255, 0.66);
+  font-size: 15px;
+  line-height: 1.72;
+}
+
+.page-transition__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: stretch;
+}
+
+.page-transition__link {
+  @include glowing-border-btn;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  width: 100%;
+  margin: 0;
+  padding: 16px 19px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 16px;
+  background:
+    linear-gradient(
+      45deg,
+      color-mix(in srgb, var(--color-accent) 34%, transparent),
+      rgba(255, 255, 255, 0.08),
+      color-mix(in srgb, var(--color-accent) 34%, transparent)
+    ),
+    rgba(255, 255, 255, 0.055);
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.28);
+  color: var(--color-white);
+  font-size: 16px;
+  font-weight: 750;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+}
+
+@include respond(md) {
+  .page-transition {
+    grid-template-columns: minmax(0, 1fr) auto;
+    padding: 28px;
+  }
+
+  .page-transition__actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .page-transition__link {
+    width: auto;
+    min-width: 220px;
+  }
+}
+
+@include respond(lg) {
+  .page-transition {
+    padding: 34px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-transition,
+  .page-transition::before,
+  .page-transition__link {
+    transition: none;
+    animation: none;
+  }
+}
