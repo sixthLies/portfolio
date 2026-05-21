@@ -460,7 +460,8 @@ export const SITE_VERSIONS = Object.freeze({
         items: [
           {
             id: "colezium-support",
-            company: "Colezium",
+            website: "https://colizeumarena.com/",
+            company: "Colezium (удалённо)",
             focus: "Пользовательская поддержка",
             summary:
               "Помогал пользователям быстро возвращаться к работе, снижая влияние технических проблем на их задачи.",
@@ -475,7 +476,8 @@ export const SITE_VERSIONS = Object.freeze({
           },
           {
             id: "kiberpridesupportremote",
-            company: "KiberPride remote",
+            website: "https://kiberpride.ru/",
+            company: "KiberPride (удалённо)",
             focus: "Пользовательская поддержка",
             points: [
               "Обработка технических инцидентов от администраторов и пользователей.",
@@ -490,6 +492,7 @@ export const SITE_VERSIONS = Object.freeze({
           },
           {
             id: "kiberpride-support",
+            website: "https://kiberpride.ru/",
             company: "KiberPride",
             focus: "Стабильность рабочей среды",
             summary:

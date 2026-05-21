@@ -109,6 +109,22 @@
   color: rgba(255, 255, 255, 0.88);
 }
 
+.experience__website {
+  color: rgba(255, 255, 255, 0.64);
+  font-size: 14px;
+  text-decoration: none;
+  margin-bottom: 10px;
+  transition: color 180ms ease;
+}
+
+.experience__website--colezium:hover {
+  color: #ffe665;
+}
+
+.experience__website--kiberpride:hover {
+  color: #0073ff;
+}
+
 .experience__list {
   display: grid;
   gap: 11px;

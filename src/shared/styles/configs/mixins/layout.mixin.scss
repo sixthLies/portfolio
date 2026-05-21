@@ -14,7 +14,13 @@
 @mixin backdrop-bg {
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgb(0 0 0 / 2%);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.075),
+      rgba(255, 255, 255, 0.032)
+    ),
+    rgba(9, 12, 20, 0.42);
   padding: 20px 14px;
   backdrop-filter: blur(8px);
 }

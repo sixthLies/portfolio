@@ -12,9 +12,6 @@ export const HeroVisual = () => {
   const {
     root,
     grid,
-    header,
-    eyebrow,
-    status,
     terminal,
     terminalBar,
     terminalDot,
@@ -32,11 +29,6 @@ export const HeroVisual = () => {
   return (
     <aside className={root} aria-label="Engineering workspace overview">
       <div className={grid} aria-hidden="true" />
-
-      <div className={header}>
-        <span className={eyebrow}>Control center</span>
-        <span className={status}>online</span>
-      </div>
 
       <div className={terminal}>
         <div className={terminalBar} aria-hidden="true">

@@ -70,7 +70,11 @@
   padding: 18px;
   border: 1px solid rgba(255, 255, 255, 0.12);
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.035)),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.09),
+      rgba(255, 255, 255, 0.035)
+    ),
     rgba(7, 10, 18, 0.52);
   box-shadow:
     0 28px 90px rgba(0, 0, 0, 0.44),
@@ -84,7 +88,11 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 72% 14%, var(--about-accent-tint), transparent 32%),
+    radial-gradient(
+      circle at 72% 14%,
+      var(--about-accent-tint),
+      transparent 32%
+    ),
     linear-gradient(135deg, var(--about-accent-tint-weak), transparent 38%);
   pointer-events: none;
 }
@@ -140,6 +148,7 @@
 }
 
 .hero-visual__terminal {
+  margin-top: 10px;
   overflow: hidden;
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -222,7 +231,12 @@
   width: 100%;
   height: 100%;
   border-radius: inherit;
-  background: linear-gradient(45deg, var(--color-accent), var(--color-white), var(--color-accent));
+  background: linear-gradient(
+    45deg,
+    var(--color-accent),
+    var(--color-white),
+    var(--color-accent)
+  );
   box-shadow: 0 0 26px var(--about-accent-glow);
   animation: about-rail-soft-pulse 4.8s ease-in-out infinite;
 }

@@ -5,10 +5,16 @@ import { CONTACTS_TITLE } from "../model/constants"
 import { selectContactsLinks } from "../lib/selectContactsLinks"
 import { contactsPageClasses } from "../model/classes"
 import { useSiteVersion } from "@/shared/lib/useSiteVersion"
+import { ROUTE_PATHS } from "@/shared/config/routes"
 
 export const ContactsPage = () => {
   const { versionId } = useSiteVersion()
   const links = selectContactsLinks(versionId)
+  const previousPageLink =
+    links.find((link) => link.href !== ROUTE_PATHS.home) ?? links[0]
+  const transitionText = previousPageLink
+    ? `Вернуться на страницу ${previousPageLink.label}`
+    : undefined
   const { CONTACTS_PAGE_CLASS, CONTACTS_TITLE_CLASS } = contactsPageClasses
 
   return (
@@ -21,7 +27,7 @@ export const ContactsPage = () => {
 
       <Cards cards={contactsPageCards} />
 
-      <LinksBlock links={links} />
+      <LinksBlock links={links} text={transitionText} />
     </section>
   )
 }

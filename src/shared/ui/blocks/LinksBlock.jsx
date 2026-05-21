@@ -2,7 +2,7 @@ import { Link } from "react-router"
 import { Reveal } from "../reveal"
 import { useVersionedPath } from "@/shared/lib/useSiteVersion"
 
-export const LinksBlock = ({ links }) => {
+export const LinksBlock = ({ links, text }) => {
   const toVersionedPath = useVersionedPath()
 
   if (!links?.length) return null
@@ -18,7 +18,8 @@ export const LinksBlock = ({ links }) => {
       aria-label="Переходы между разделами"
     >
       <p className="page-transition__text">
-        Продолжайте маршрут по портфолио или вернитесь к предыдущему разделу.
+        {text ??
+          "Продолжайте маршрут по портфолио или вернитесь к предыдущему разделу."}
       </p>
 
       <div className="page-transition__actions">
