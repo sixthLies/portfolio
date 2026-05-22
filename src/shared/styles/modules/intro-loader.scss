@@ -1,0 +1,45 @@
+.intro-loader {
+  position: fixed;
+  inset: 0;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  z-index: 1000;
+  pointer-events: auto;
+}
+
+.intro-loader__section {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 0;
+  width: calc(50% + 1px);
+  background: #000;
+  transition: transform 0.82s cubic-bezier(0.76, 0, 0.24, 1);
+  will-change: transform;
+}
+
+.intro-loader__section--left {
+  left: 0;
+  transform-origin: left center;
+}
+
+.intro-loader__section--right {
+  right: 0;
+  transform-origin: right center;
+}
+
+.intro-loader--loaded .intro-loader__section--left {
+  transform: translateX(-100%);
+}
+
+.intro-loader--loaded .intro-loader__section--right {
+  transform: translateX(100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-loader__section {
+    transition-duration: 120ms;
+  }
+}
