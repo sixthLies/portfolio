@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
+import { OrbitLoader } from "./OrbitLoader"
 
 const SESSION_KEY = "hh:intro-loader-shown"
-const LOAD_DELAY_MS = 1000
-const EXIT_DELAY_MS = 900
+const LOAD_DELAY_MS = 2320
+const EXIT_DELAY_MS = 680
 const REDUCED_LOAD_DELAY_MS = 120
 const REDUCED_EXIT_DELAY_MS = 180
 
@@ -81,6 +82,7 @@ export const IntroLoader = () => {
       aria-label="Loading site"
       aria-live="polite"
     >
+      <OrbitLoader />
       <div
         className="intro-loader__section intro-loader__section--left"
         aria-hidden="true"
