@@ -15,3 +15,6 @@ export { ModalWindowCard } from "./modals/modalWindowCard/ModalWindowCard"
 
 // effects
 export { Reveal } from "./reveal"
+
+// seo
+export { Seo } from "./seo"

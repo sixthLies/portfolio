@@ -12,10 +12,39 @@ const createAboutContent = ({ hero, what, experience, process, goals }) => ({
   goals,
 })
 
+export const DEFAULT_SEO_CONFIG = Object.freeze({
+  title: "Данил - Цифровое портфолио",
+  description:
+    "Многоформатное портфолио с разными профессиональными направлениями, опытом, стеком технологий и рабочими процессами.",
+  keywords: ["портфолио", "frontend", "техническая поддержка", "автоматизация"],
+  themeColor: "#09090f",
+  ogImage: "/og/default-preview.jpg",
+})
+
+const createSeoConfig = (seo = {}) =>
+  Object.freeze({
+    ...DEFAULT_SEO_CONFIG,
+    ...seo,
+    keywords: seo.keywords ?? DEFAULT_SEO_CONFIG.keywords,
+  })
+
 export const DEFAULT_SITE_VERSION_ID = "default"
 
 export const SITE_VERSIONS = Object.freeze({
   default: {
+    seo: createSeoConfig({
+      title: "Данил - Цифровое портфолио | Октрыт к работе",
+      description:
+        "Многоформатное цифровое портфолио с frontend-интерфейсами, автоматизацией процессов и AI-инструментами для практических рабочих задач.",
+      keywords: [
+        "цифровое портфолио",
+        "frontend разработчик",
+        "автоматизация",
+        "AI инструменты",
+        "React разработчик",
+      ],
+      ogImage: "/og/default-preview.jpg",
+    }),
     about: createAboutContent({
       hero: {
         badge: "Открыт к сотрудничеству",
@@ -248,6 +277,19 @@ export const SITE_VERSIONS = Object.freeze({
     ],
   },
   frontend: {
+    seo: createSeoConfig({
+      title: "Данил — Frontend Developer | Открыт к работе",
+      description:
+        "Frontend-разработчик с фокусом на React-интерфейсах, архитектуре UI-систем, производительности и создании современных пользовательских интерфейсов.",
+      keywords: [
+        "frontend разработчик",
+        "React разработчик",
+        "UI инженер",
+        "JavaScript",
+        "Vite",
+      ],
+      ogImage: "/og/frontend-preview.jpg",
+    }),
     about: createAboutContent({
       hero: {
         badge: "Открыт к сотрудничеству",
@@ -306,32 +348,6 @@ export const SITE_VERSIONS = Object.freeze({
           },
         ],
       },
-      // process: {
-      //   title: "Рабочий процесс",
-      //   subtitle: "От задачи до готового интерфейса без лишней сложности",
-      //   steps: [
-      //     {
-      //       n: 1,
-      //       title: "Разбираю сценарий и требования",
-      //       text: "Сначала фиксирую, что именно должен делать экран, какие есть ограничения и где пользователю особенно важно не споткнуться.",
-      //     },
-      //     {
-      //       n: 2,
-      //       title: "Собираю интерфейс и логику",
-      //       text: "Строю компоненты, маршруты и состояния так, чтобы код оставался понятным и не расползался по проекту без необходимости.",
-      //     },
-      //     {
-      //       n: 3,
-      //       title: "Подключаю данные и связи",
-      //       text: "Аккуратно подвязываю API, навигацию и служебные состояния, сохраняя предсказуемое поведение интерфейса.",
-      //     },
-      //     {
-      //       n: 4,
-      //       title: "Проверяю и дорабатываю детали",
-      //       text: "Финально прохожусь по UX, адаптивности и мелочам, которые чаще всего и определяют ощущение качества.",
-      //     },
-      //   ],
-      // },
       goals: {
         title: "Цели",
         items: [
@@ -424,6 +440,19 @@ export const SITE_VERSIONS = Object.freeze({
     ],
   },
   "technical-support": {
+    seo: createSeoConfig({
+      title: "Данил - Специалист Технической Поддержки | Открыт к работе",
+      description:
+        "Специалист технической поддержки. Диагностика, восстановление работы пользователей и системный подход к поддержке.",
+      keywords: [
+        "техническая поддержка",
+        "helpdesk",
+        "специалист поддержки",
+        "поддержка Windows",
+        "управление инцидентами",
+      ],
+      ogImage: "/og/support-preview.jpg",
+    }),
     about: createAboutContent({
       hero: {
         badge: "Открыт к сотрудничеству",
@@ -545,7 +574,6 @@ export const SITE_VERSIONS = Object.freeze({
           "Ускорять восстановление работы пользователей без потери качества поддержки.",
           "Развивать связку поддержки с автоматизацией и внутренними инструментами.",
           "Становиться частью команды, где важен реальный результат.",
-          // "Становиться частью команды, где важен реальный результат.",
         ],
       },
     }),
@@ -619,6 +647,19 @@ export const SITE_VERSIONS = Object.freeze({
     ],
   },
   automation: {
+    seo: createSeoConfig({
+      title: "Данил — Инженер автоматизации | Открыт к работе",
+      description:
+        "Инженер автоматизации с фокусом на практических workflow-процессах, AI-инструментах, интеграции сервисов и построении надежных операционных систем.",
+      keywords: [
+        "инженер автоматизации",
+        "автоматизация процессов",
+        "AI инструменты",
+        "n8n",
+        "workflow автоматизация",
+      ],
+      ogImage: "/og/automation-preview.jpg",
+    }),
     about: createAboutContent({
       hero: {
         badge: "Открыт к automation-задачам",
@@ -788,3 +829,6 @@ export const SITE_VERSIONS = Object.freeze({
 
 export const getSiteVersionContent = (versionId) =>
   SITE_VERSIONS[versionId] ?? SITE_VERSIONS[DEFAULT_SITE_VERSION_ID]
+
+export const getSiteVersionSeo = (versionId) =>
+  createSeoConfig(getSiteVersionContent(versionId).seo)
