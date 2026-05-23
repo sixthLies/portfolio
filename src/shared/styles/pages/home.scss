@@ -1,3 +1,5 @@
+@use "../configs" as *;
+
 .home .card::before {
   content: "";
   position: absolute;
@@ -22,26 +24,28 @@
   display: none;
 }
 
-.home .card:hover {
-  transform: translateY(-4px) scale(1.02);
-  border-color: var(--color-border-accent);
-  background:
-    var(--gradient-card-hover),
-    var(--color-surface-2);
-  box-shadow: var(--shadow-card-hover);
-}
+@include desktop-interaction {
+  .home .card:hover {
+    transform: translateY(-4px) scale(1.02);
+    border-color: var(--color-border-accent);
+    background:
+      var(--gradient-card-hover),
+      var(--color-surface-2);
+    box-shadow: var(--shadow-card-hover);
+  }
 
-.home .card--disabled:hover {
-  transform: none;
-  box-shadow: none;
-}
+  .home .card--disabled:hover {
+    transform: none;
+    box-shadow: none;
+  }
 
-.home .card:hover::before {
-  opacity: 1;
-  transform: rotate(-45deg) translateY(100%);
-}
+  .home .card:hover::before {
+    opacity: 1;
+    transform: rotate(-45deg) translateY(100%);
+  }
 
-.home .card--disabled:hover::before {
-  opacity: 0;
-  transform: rotate(-45deg);
+  .home .card--disabled:hover::before {
+    opacity: 0;
+    transform: rotate(-45deg);
+  }
 }

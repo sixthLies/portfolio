@@ -183,6 +183,43 @@
   color: color-mix(in srgb, var(--color-accent) 42%, var(--color-white));
 }
 
+.hero-visual__terminalCommand {
+  position: relative;
+  display: inline-block;
+  width: 0;
+  max-width: max-content;
+  overflow: hidden;
+  white-space: nowrap;
+  opacity: 0;
+  vertical-align: bottom;
+  animation:
+    hero-terminal-command-reveal 1ms linear var(--typing-delay) forwards,
+    hero-terminal-command-type var(--typing-duration)
+      steps(var(--typing-chars), end) var(--typing-delay) forwards;
+}
+
+.hero-visual__terminalCommand::after {
+  content: "";
+  position: absolute;
+  top: 0.18em;
+  right: 0;
+  bottom: 0.18em;
+  width: 1px;
+  background: color-mix(in srgb, var(--color-accent) 62%, var(--color-white));
+  opacity: 0;
+  box-shadow: 0 0 10px var(--about-accent-glow);
+  animation: hero-terminal-caret-type var(--typing-duration) steps(1, end)
+    var(--typing-delay) forwards;
+}
+
+.hero-visual__terminalCommand--active::after {
+  animation:
+    hero-terminal-caret-type var(--typing-duration) steps(1, end)
+      var(--typing-delay) forwards,
+    hero-terminal-caret-blink 900ms steps(1, end)
+      calc(var(--typing-delay) + var(--typing-duration)) infinite;
+}
+
 .hero-visual__cards {
   display: grid;
   gap: 10px;
@@ -241,6 +278,41 @@
   }
 }
 
+@keyframes hero-terminal-command-reveal {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes hero-terminal-command-type {
+  to {
+    width: var(--typing-width);
+  }
+}
+
+@keyframes hero-terminal-caret-type {
+  0%,
+  96% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes hero-terminal-caret-blink {
+  0%,
+  48% {
+    opacity: 1;
+  }
+
+  49%,
+  100% {
+    opacity: 0;
+  }
+}
+
 @include respond(md) {
   .hero__title {
     font-size: 58px;
@@ -280,5 +352,21 @@
   .hero-visual__cards {
     grid-template-columns: 1fr;
     width: min(72%, 320px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-visual__terminalCommand,
+  .hero-visual__terminalCommand::after {
+    animation: none;
+  }
+
+  .hero-visual__terminalCommand {
+    width: auto;
+    opacity: 1;
+  }
+
+  .hero-visual__terminalCommand::after {
+    display: none;
   }
 }

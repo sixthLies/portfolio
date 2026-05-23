@@ -16,6 +16,8 @@
   text-decoration: none;
 }
 
-.mailto__link:hover {
-  color: var(--color-white);
+@include desktop-interaction {
+  .mailto__link:hover {
+    color: var(--color-white);
+  }
 }

@@ -125,22 +125,24 @@
   animation-delay: -3100ms;
 }
 
-.goals__item:hover .goals__card {
-  transform: translateY(-4px);
-  border-color: var(--about-accent-border-strong);
-  background:
-    radial-gradient(
-      circle at 88% 16%,
-      var(--about-accent-tint-strong),
-      transparent 36%
-    ),
-    var(--gradient-card-hover),
-    var(--color-surface-glass-hover);
-  box-shadow: var(--shadow-card-hover);
-}
+@include desktop-interaction {
+  .goals__item:hover .goals__card {
+    transform: translateY(-4px);
+    border-color: var(--about-accent-border-strong);
+    background:
+      radial-gradient(
+        circle at 88% 16%,
+        var(--about-accent-tint-strong),
+        transparent 36%
+      ),
+      var(--gradient-card-hover),
+      var(--color-surface-glass-hover);
+    box-shadow: var(--shadow-card-hover);
+  }
 
-.goals__item:hover .goals__card::before {
-  opacity: 1;
+  .goals__item:hover .goals__card::before {
+    opacity: 1;
+  }
 }
 
 .goals__top {

@@ -66,10 +66,6 @@
   opacity: 0.9;
 }
 
-.what__card--featured:hover {
-  border-color: var(--about-accent-border-strong);
-}
-
 .what-showcase {
   position: absolute;
   inset: 0;
@@ -148,8 +144,14 @@
   animation-delay: 1600ms;
 }
 
-.what__card--featured:hover .what-showcase__metric {
-  border-color: var(--about-accent-border);
+@include desktop-interaction {
+  .what__card--featured:hover {
+    border-color: var(--about-accent-border-strong);
+  }
+
+  .what__card--featured:hover .what-showcase__metric {
+    border-color: var(--about-accent-border);
+  }
 }
 
 .what-showcase__metricLabel {

@@ -51,8 +51,10 @@
   cursor: pointer;
   @include glowing-border-btn;
 
-  &:active {
-    font-size: smaller;
+  @include desktop-interaction {
+    &:active {
+      font-size: smaller;
+    }
   }
 }
 

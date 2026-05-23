@@ -20,3 +20,9 @@
     @error "Unknown direction: #{$direction}. Use up or down.";
   }
 }
+
+@mixin desktop-interaction {
+  @media (hover: hover) and (pointer: fine) {
+    @content;
+  }
+}

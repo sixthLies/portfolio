@@ -46,7 +46,7 @@
 
 .process__subtitle {
   margin: 12px 0 0;
-  max-width: 680px;
+  max-width: 705px;
   color: var(--color-text-soft);
   line-height: 1.65;
 }
@@ -167,17 +167,19 @@
   transition: opacity var(--transition-fast);
 }
 
-.process__item:hover .process__content {
-  transform: translateY(-4px);
-  border-color: var(--about-accent-border-strong);
-  background:
-    var(--gradient-card-hover),
-    var(--color-surface-glass-hover);
-  box-shadow: var(--shadow-card-hover);
-}
+@include desktop-interaction {
+  .process__item:hover .process__content {
+    transform: translateY(-4px);
+    border-color: var(--about-accent-border-strong);
+    background:
+      var(--gradient-card-hover),
+      var(--color-surface-glass-hover);
+    box-shadow: var(--shadow-card-hover);
+  }
 
-.process__item:hover .process__content::before {
-  opacity: 1;
+  .process__item:hover .process__content::before {
+    opacity: 1;
+  }
 }
 
 .process__copy,

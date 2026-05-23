@@ -117,12 +117,14 @@
   transition: color 180ms ease;
 }
 
-.experience__website--colezium:hover {
-  color: #ffe665;
-}
+@include desktop-interaction {
+  .experience__website--colezium:hover {
+    color: #ffe665;
+  }
 
-.experience__website--kiberpride:hover {
-  color: #0073ff;
+  .experience__website--kiberpride:hover {
+    color: #0073ff;
+  }
 }
 
 .experience__list {

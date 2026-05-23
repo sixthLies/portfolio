@@ -12,9 +12,11 @@
   display: block;
 }
 
-.contacts .card:hover {
-  border-color: var(--color-border-accent);
-  box-shadow: var(--shadow-card-hover);
+@include desktop-interaction {
+  .contacts .card:hover {
+    border-color: var(--color-border-accent);
+    box-shadow: var(--shadow-card-hover);
+  }
 }
 
 .contacts .card__img {

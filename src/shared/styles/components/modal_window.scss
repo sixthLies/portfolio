@@ -50,8 +50,10 @@
   cursor: pointer;
 }
 
-.modal__close:hover {
-  color: var(--color-text);
+@include desktop-interaction {
+  .modal__close:hover {
+    color: var(--color-text);
+  }
 }
 
 @include respond(md) {

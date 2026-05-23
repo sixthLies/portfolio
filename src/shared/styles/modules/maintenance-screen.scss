@@ -76,9 +76,14 @@
     text-shadow var(--transition-fast);
 }
 
-.maintenance-screen__link:hover,
 .maintenance-screen__link:focus-visible {
   color: var(--color-accent-hover);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .maintenance-screen__link:hover {
+    color: var(--color-accent-hover);
+  }
 }
 
 .maintenance-screen__link:focus-visible {

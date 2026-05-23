@@ -25,8 +25,10 @@
   text-align: center;
 }
 
-.footer__copyright-link:hover {
-  color: var(--color-accent);
+@include desktop-interaction {
+  .footer__copyright-link:hover {
+    color: var(--color-accent);
+  }
 }
 
 .footer__nav-list {
@@ -43,8 +45,10 @@
   width: 44px;
   height: 44px;
 
-  &:hover {
-    animation: pulse-icon 2s infinite;
+  @include desktop-interaction {
+    &:hover {
+      animation: pulse-icon 2s infinite;
+    }
   }
 }
 

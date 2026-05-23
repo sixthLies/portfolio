@@ -14,6 +14,7 @@ export const heroClasses = {
     terminalDot: "hero-visual__terminalDot",
     terminalBody: "hero-visual__terminalBody",
     terminalLine: "hero-visual__terminalLine",
+    terminalCommand: "hero-visual__terminalCommand",
     cards: "hero-visual__cards",
     card: "hero-visual__card",
     cardLabel: "hero-visual__cardLabel",

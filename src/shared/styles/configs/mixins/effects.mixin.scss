@@ -1,5 +1,6 @@
 @use "../../theme/colors" as *;
 @use "../variables" as *;
+@use "./breakpoints.mixin" as *;
 
 @mixin glowing-border-btn($angle: 45deg) {
   position: relative;
@@ -34,12 +35,14 @@
       pulse 3s ease-in-out infinite;
   }
 
-  &:hover::before {
-    opacity: 1;
-  }
+  @include desktop-interaction {
+    &:hover::before {
+      opacity: 1;
+    }
 
-  &:hover {
-    box-shadow: var(--shadow-glow-soft);
+    &:hover {
+      box-shadow: var(--shadow-glow-soft);
+    }
   }
 
   &::after {
@@ -111,17 +114,19 @@
     box-shadow var(--transition-fast),
     transform var(--transition-fast);
 
-  &:hover {
-    background:
-      var(--gradient-card-hover),
-      var(--glass-bg-hover);
-    border-color: var(--color-border-accent);
-    box-shadow: var(--shadow-card-hover);
-    transform: translateY(-1px);
-  }
+  @include desktop-interaction {
+    &:hover {
+      background:
+        var(--gradient-card-hover),
+        var(--glass-bg-hover);
+      border-color: var(--color-border-accent);
+      box-shadow: var(--shadow-card-hover);
+      transform: translateY(-1px);
+    }
 
-  &:active {
-    transform: translateY(0);
-    background: var(--glass-bg-active);
+    &:active {
+      transform: translateY(0);
+      background: var(--glass-bg-active);
+    }
   }
 }
