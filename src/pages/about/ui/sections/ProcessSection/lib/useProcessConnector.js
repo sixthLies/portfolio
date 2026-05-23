@@ -5,6 +5,7 @@ const MOBILE_EDGE_GAP = 12
 const CORNER_RADIUS = 24
 const MIN_SIDE_ROUTE = 96
 const MOBILE_BREAKPOINT = 768
+const CARD_CONTENT_SELECTOR = ".process__content"
 
 const useIsomorphicLayoutEffect =
   typeof window === "undefined" ? useEffect : useLayoutEffect
@@ -20,6 +21,35 @@ const getRelativeRect = (node, rootRect) => {
     top: rect.top - rootRect.top,
     width: rect.width,
   }
+}
+
+const getLayoutRect = (node, rootNode) => {
+  let left = 0
+  let top = 0
+  let currentNode = node
+
+  while (currentNode && currentNode !== rootNode) {
+    left += currentNode.offsetLeft
+    top += currentNode.offsetTop
+    currentNode = currentNode.offsetParent
+  }
+
+  if (currentNode !== rootNode) {
+    return getRelativeRect(node, rootNode.getBoundingClientRect())
+  }
+
+  return {
+    bottom: top + node.offsetHeight,
+    height: node.offsetHeight,
+    left,
+    right: left + node.offsetWidth,
+    top,
+    width: node.offsetWidth,
+  }
+}
+
+const getMeasuredCardNode = (node) => {
+  return node.querySelector(CARD_CONTENT_SELECTOR) ?? node
 }
 
 const getDistance = (a, b) => Math.hypot(b.x - a.x, b.y - a.y)
@@ -125,10 +155,11 @@ const getConnectorData = ({ itemNodes, rootNode }) => {
   const nodes = itemNodes.filter(Boolean)
   if (nodes.length < 2) return null
 
-  const rootRect = rootNode.getBoundingClientRect()
   const width = Math.max(rootNode.clientWidth, 1)
   const height = Math.max(rootNode.clientHeight, 1)
-  const itemRects = nodes.map((node) => getRelativeRect(node, rootRect))
+  const itemRects = nodes.map((node) =>
+    getLayoutRect(getMeasuredCardNode(node), rootNode),
+  )
   const isMobileRoute = width < MOBILE_BREAKPOINT
   const routePoints = []
   const connectionNodes = []
