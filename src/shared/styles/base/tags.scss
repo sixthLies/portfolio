@@ -11,6 +11,7 @@ html {
   background-size: cover;
   background-attachment: scroll;
   overflow-x: hidden;
+  scrollbar-gutter: stable;
 }
 
 body {
@@ -37,5 +38,3 @@ body {
     background-attachment: fixed;
   }
 }
-
-
