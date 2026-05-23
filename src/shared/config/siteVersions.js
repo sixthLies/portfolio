@@ -18,7 +18,7 @@ export const DEFAULT_SEO_CONFIG = Object.freeze({
     "Многоформатное портфолио с разными профессиональными направлениями, опытом, стеком технологий и рабочими процессами.",
   keywords: ["портфолио", "frontend", "техническая поддержка", "автоматизация"],
   themeColor: "#09090f",
-  ogImage: "/og/default-preview.jpg",
+  ogImage: "/web-app-manifest-512x512.png",
   robots: undefined,
 })
 
@@ -72,7 +72,7 @@ export const SITE_VERSIONS = Object.freeze({
         "AI инструменты",
         "React разработчик",
       ],
-      ogImage: "/og/default-preview.jpg",
+      ogImage: "/web-app-manifest-512x512.png",
     }),
     about: createAboutContent({
       hero: {
@@ -317,7 +317,7 @@ export const SITE_VERSIONS = Object.freeze({
         "JavaScript",
         "Vite",
       ],
-      ogImage: "/og/frontend-preview.jpg",
+      ogImage: "/web-app-manifest-512x512.png",
     }),
     about: createAboutContent({
       hero: {
@@ -480,7 +480,7 @@ export const SITE_VERSIONS = Object.freeze({
         "поддержка Windows",
         "управление инцидентами",
       ],
-      ogImage: "/og/support-preview.jpg",
+      ogImage: "/web-app-manifest-512x512.png",
     }),
     about: createAboutContent({
       hero: {
@@ -687,7 +687,7 @@ export const SITE_VERSIONS = Object.freeze({
         "n8n",
         "workflow автоматизация",
       ],
-      ogImage: "/og/automation-preview.jpg",
+      ogImage: "/web-app-manifest-512x512.png",
     }),
     about: createAboutContent({
       hero: {

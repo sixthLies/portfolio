@@ -22,10 +22,10 @@
   width: 100%;
 }
 
-// .l-scroll-panel {
-//   min-height: 0;
-//   overflow: visible;
-// }
+.l-scroll-panel {
+  min-height: 0;
+  overflow: visible;
+}
 
 .l-center {
   display: flex;
@@ -47,11 +47,6 @@
     padding-inline: 16px;
   }
 
-  // .l-scroll-panel {
-  //   @include scollbar;
-  //   height: clamp(500px, 74dvh, 590px);
-  //   overflow-x: hidden;
-  // }
 }
 
 @include respond(lg) {
@@ -60,13 +55,4 @@
     padding-inline: 10px;
   }
 
-  // .l-scroll-panel {
-  //   height: 590px;
-  // }
 }
-
-// @media (min-width: 768px) and (max-height: 520px) and (orientation: landscape) {
-//   .l-scroll-panel {
-//     height: 78dvh;
-//   }
-// }

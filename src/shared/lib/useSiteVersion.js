@@ -22,8 +22,6 @@ export const useSiteVersion = () => {
 
 export const useSiteVersionContent = () => useSiteVersion().content
 
-export const useSiteVersionSeo = () => useSiteVersion().seo
-
 export const useVersionedPath = () => {
   const { versionId } = useParams()
   return (path) => buildVersionedPath(path, versionId)

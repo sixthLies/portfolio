@@ -36,11 +36,11 @@ import {
   wordLogo,
   anydeskLogo,
   windowsLogo,
+  ubuntuLogo,
   postmanLogo,
   jsonLogo,
   figmaLogo,
   aistudioLogo,
-  civitaiLogo,
 } from "@/shared/assets/icons"
 
 export const resources = {
@@ -66,6 +66,7 @@ export const resources = {
     href: "https://www.microsoft.com/en-us/windows/",
     logo: windowsLogo,
   },
+  ubuntu: { href: "https://ubuntu.com/", logo: ubuntuLogo },
   git: { href: "https://git-scm.com/", logo: gitLogo },
   github: { href: "https://github.com/", logo: github },
   docker: { href: "https://www.docker.com/", logo: dockerLogo },
@@ -82,10 +83,6 @@ export const resources = {
   qwen: { href: "https://qwen.ai/home", logo: qwenLogo },
   ollama: { href: "https://ollama.com/", logo: ollamaLogo },
   comfy: { href: "https://www.comfy.org", logo: comfyLogo },
-  civitai: {
-    href: "https://civitai.com/",
-    logo: civitaiLogo,
-  },
   midjourney: { href: "https://www.midjourney.com/home", logo: midjourneyLogo },
   veo3: { href: "https://aistudio.google.com/models/veo-3", logo: geminiLogo },
   sora: { href: "https://sora.com/", logo: soraLogo },

@@ -12,12 +12,11 @@ import { footerClasses } from "../model/classes"
 
 const links = { telegrammLink, githubLink, gmailLink }
 const icons = { telegram, github, gmail }
-const TEMPORARILY_DISABLED_SOCIAL_ITEM_ALT = "gmail"
+const HIDDEN_FOOTER_SOCIAL_ITEM_ALT = "gmail"
 
 export const FooterNav = () => {
   const visibleSocialItems = socialItems(links, icons).filter(
-    // Temporarily hide the Gmail link from the footer.
-    ({ alt }) => alt !== TEMPORARILY_DISABLED_SOCIAL_ITEM_ALT,
+    ({ alt }) => alt !== HIDDEN_FOOTER_SOCIAL_ITEM_ALT,
   )
 
   return (

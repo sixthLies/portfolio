@@ -25,13 +25,13 @@ import dockerLogo from "./skills/frontend/svg/docker.svg"
 import n8nLogo from "./skills/frontend/svg/n8n.svg"
 import postmanLogo from "./skills/frontend/svg/postman.svg"
 import windowsLogo from "./skills/frontend/svg/windows.svg"
+import ubuntuLogo from "./skills/frontend/svg/ubuntu.svg"
 import figmaLogo from "./skills/frontend/svg/figma.svg"
 import jsonLogo from "./skills/frontend/svg/json.svg"
 
 // ai
 // svg
 import qwenLogo from "./skills/ai/svg/qwen.svg"
-import civitaiLogo from "./skills/ai/svg/civitai.svg"
 import aistudioLogo from "./skills/ai/svg/aistudio.svg"
 import geminiLogo from "./skills/ai/svg/gemini.svg"
 import grokLogo from "./skills/ai/svg/grok.svg"
@@ -82,12 +82,12 @@ export {
   dockerLogo,
   postmanLogo,
   windowsLogo,
+  ubuntuLogo,
   jsonLogo,
   figmaLogo,
 
   // ai
   aistudioLogo,
-  civitaiLogo,
   comfyLogo,
   qwenLogo,
   geminiLogo,

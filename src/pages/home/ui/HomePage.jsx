@@ -5,7 +5,7 @@ import { homePageCards } from "../model/pageConfig"
 import { homeClasses } from "../model/classes"
 
 const TECHNICAL_SUPPORT_VERSION_ID = "technical-support"
-const TEMPORARILY_DISABLED_CARD_TEXT = "Страница скоро будет доступна."
+const DISABLED_CARD_TEXT = "Страница скоро будет доступна."
 
 export const HomePage = () => {
   const { home } = homeClasses
@@ -17,7 +17,7 @@ export const HomePage = () => {
             ? {
                 ...card,
                 disabled: true,
-                disabledText: TEMPORARILY_DISABLED_CARD_TEXT,
+                disabledText: DISABLED_CARD_TEXT,
               }
             : card,
         )

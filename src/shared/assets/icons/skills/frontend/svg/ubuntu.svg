@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Ubuntu">
+  <circle cx="32" cy="32" r="28" fill="#e95420"/>
+  <circle cx="32" cy="32" r="12" fill="none" stroke="#fff" stroke-width="5"/>
+  <circle cx="32" cy="11" r="6" fill="#fff"/>
+  <circle cx="14" cy="43" r="6" fill="#fff"/>
+  <circle cx="50" cy="43" r="6" fill="#fff"/>
+  <path d="M32 17v8M19.5 39l7-4M44.5 39l-7-4" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+</svg>

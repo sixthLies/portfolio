@@ -5,15 +5,14 @@ import { menuItems } from "@/shared/config/navigation"
 import { useSiteVersion } from "@/shared/lib/useSiteVersion"
 
 const TECHNICAL_SUPPORT_VERSION_ID = "technical-support"
-const TEMPORARILY_DISABLED_PROJECTS_MENU_ITEM_ID = "projects"
+const HIDDEN_TECHNICAL_SUPPORT_MENU_ITEM_ID = "projects"
 
 export const HeaderNav = () => {
   const { versionId } = useSiteVersion()
   const visibleMenuItems =
     versionId === TECHNICAL_SUPPORT_VERSION_ID
       ? menuItems.filter(
-          // Temporarily hide the portfolio link for the technical support landing.
-          ({ id }) => id !== TEMPORARILY_DISABLED_PROJECTS_MENU_ITEM_ID,
+          ({ id }) => id !== HIDDEN_TECHNICAL_SUPPORT_MENU_ITEM_ID,
         )
       : menuItems
 
