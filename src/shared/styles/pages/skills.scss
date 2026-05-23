@@ -33,7 +33,7 @@
   gap: 10px;
   align-items: start;
   padding: 12px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 1px solid var(--color-border-soft);
 }
 
 .skills-table__row::after {
@@ -44,8 +44,8 @@
   height: 1px;
   background: linear-gradient(
     to right,
-    rgba(255, 255, 255, 0.25),
-    rgba(255, 255, 255, 0.02)
+    var(--color-border-strong),
+    transparent
   );
 }
 
@@ -67,8 +67,10 @@
   padding: 4px 10px;
   border-radius: 999px;
   font-size: clamp(16px, 4vw, 20px);
-  background: rgba(111, 169, 255, 0.18);
-  box-shadow: 0 0 12px rgba(111, 169, 255, 0.25);
+  border: 1px solid var(--color-border-soft);
+  background: var(--color-accent-soft);
+  color: var(--color-text-soft);
+  box-shadow: var(--shadow-glow-soft);
 }
 
 .skills-table__link {

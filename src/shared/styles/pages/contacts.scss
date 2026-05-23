@@ -13,7 +13,8 @@
 }
 
 .contacts .card:hover {
-  box-shadow: 0 0 20px var(--color-accent);
+  border-color: var(--color-border-accent);
+  box-shadow: var(--shadow-card-hover);
 }
 
 .contacts .card__img {

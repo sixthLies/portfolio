@@ -15,7 +15,7 @@
   bottom: 0;
   z-index: 0;
   width: calc(50% + 1px);
-  background: #000;
+  background: var(--color-bg);
   transition: transform 0.64s cubic-bezier(0.76, 0, 0.24, 1);
   will-change: transform;
 }
@@ -87,7 +87,7 @@
 }
 
 .orbit-loader__particle {
-  fill: color-mix(in srgb, var(--color-white) 70%, #38dff1);
+  fill: color-mix(in srgb, var(--color-accent-hover) 30%, var(--color-text));
   opacity: 0.62;
   transform-box: fill-box;
   transform-origin: center;
@@ -106,7 +106,7 @@
 
 .orbit-loader__ring {
   fill: none;
-  stroke: color-mix(in srgb, var(--color-accent) 36%, #38dff1);
+  stroke: color-mix(in srgb, var(--color-accent) 62%, var(--color-text-soft));
   stroke-width: 1.4;
   opacity: 0.32;
 }
@@ -135,7 +135,7 @@
 }
 
 .orbit-loader__ship {
-  filter: drop-shadow(0 0 8px rgba(56, 223, 241, 0.72));
+  filter: drop-shadow(0 0 8px var(--color-accent-glow));
 }
 
 .orbit-loader__ship-body {
@@ -145,12 +145,12 @@
 }
 
 .orbit-loader__ship-core {
-  fill: #38dff1;
+  fill: var(--color-accent-hover);
   opacity: 0.9;
 }
 
 .orbit-loader__ship-flame {
-  fill: color-mix(in srgb, var(--color-accent) 58%, #38dff1);
+  fill: color-mix(in srgb, var(--color-accent) 58%, var(--color-accent-hover));
   opacity: 0.82;
   transform-box: fill-box;
   transform-origin: right center;

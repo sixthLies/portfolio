@@ -11,11 +11,11 @@
     0deg,
     transparent,
     transparent 30%,
-    var(--color-text-primary)
+    color-mix(in srgb, var(--color-accent) 46%, var(--color-text))
   );
   transition:
-    transform 0.5s ease,
-    opacity 0.5s ease;
+    transform var(--transition-slow),
+    opacity var(--transition-slow);
 }
 
 .home .modal-overlay {
@@ -23,8 +23,12 @@
 }
 
 .home .card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px var(--color-accent);
+  transform: translateY(-4px) scale(1.02);
+  border-color: var(--color-border-accent);
+  background:
+    var(--gradient-card-hover),
+    var(--color-surface-2);
+  box-shadow: var(--shadow-card-hover);
 }
 
 .home .card--disabled:hover {

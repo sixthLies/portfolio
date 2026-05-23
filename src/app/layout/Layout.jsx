@@ -34,7 +34,7 @@ export const Layout = () => {
 
   if (isMaintenance) {
     return (
-      <div className="l-page container">
+      <div className="l-page container" data-theme="dark">
         <Seo {...seo} />
         <IntroLoader />
         <Stars />
@@ -46,7 +46,7 @@ export const Layout = () => {
   }
 
   return (
-    <div className="l-page container">
+    <div className="l-page container" data-theme="dark">
       <Seo {...seo} />
       <IntroLoader />
       <Stars />

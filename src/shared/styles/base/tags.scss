@@ -6,6 +6,7 @@ html {
   top: 0;
   left: 0;
   z-index: -1;
+  background-color: var(--color-bg);
   background-image: var(--gradient-page);
   background-repeat: no-repeat;
   background-size: cover;
@@ -17,9 +18,9 @@ html {
 body {
   min-height: 100vh;
   min-height: 100dvh;
-  font-family: "Titillium Web", sans-serif;
+  font-family: var(--font-sans);
   font-size: 18px;
-  color: $primary-color;
+  color: var(--color-text);
   position: relative;
   top: 0;
   left: 0;
@@ -31,6 +32,11 @@ body {
 #root {
   min-height: 100vh;
   min-height: 100dvh;
+}
+
+::selection {
+  background: var(--color-accent-muted);
+  color: var(--color-text);
 }
 
 @media (min-width: 768px) {

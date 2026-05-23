@@ -4,26 +4,22 @@
   align-items: center;
   min-height: 100svh;
   padding: clamp(24px, 6vw, 72px);
-  color: var(--color-white);
+  color: var(--color-text);
 }
 
 .maintenance-screen__content {
   position: relative;
   width: min(100%, 780px);
   padding: clamp(24px, 5vw, 48px);
-  border: 1px solid color-mix(in srgb, var(--color-accent) 34%, transparent);
-  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border-accent);
+  border-radius: var(--radius-xl);
   background:
-    linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.055),
-      rgba(255, 255, 255, 0.02)
-    ),
-    rgba(0, 0, 0, 0.72);
+    var(--gradient-card),
+    color-mix(in srgb, var(--color-bg) 86%, transparent);
   box-shadow:
-    0 0 48px color-mix(in srgb, var(--color-accent) 24%, transparent),
-    var(--shadow-strong);
-  font-family: Monaco, Consolas, "Courier New", monospace;
+    var(--shadow-glow),
+    var(--shadow-panel);
+  font-family: var(--font-mono);
   animation: maintenance-screen-flicker 5.4s steps(1, end) infinite;
 }
 
@@ -39,7 +35,7 @@
     linear-gradient(
       90deg,
       transparent,
-      color-mix(in srgb, var(--color-accent) 16%, transparent),
+      var(--color-accent-soft),
       transparent
     );
   opacity: 0.24;
@@ -50,12 +46,12 @@
   position: relative;
   z-index: 1;
   margin: 0;
-  color: color-mix(in srgb, var(--color-accent) 62%, var(--color-white));
+  color: color-mix(in srgb, var(--color-accent) 58%, var(--color-text));
   font-size: clamp(16px, 3.6vw, 30px);
   line-height: 1.6;
   text-shadow:
-    0 0 10px color-mix(in srgb, var(--color-accent) 54%, transparent),
-    2px 0 0 rgba(59, 130, 246, 0.18),
+    0 0 10px var(--color-accent-glow),
+    2px 0 0 rgba(168, 85, 247, 0.18),
     -2px 0 0 rgba(255, 255, 255, 0.08);
 }
 
@@ -65,16 +61,16 @@
 }
 
 .maintenance-screen__progress-highlight {
-  color: var(--color-white);
+  color: var(--color-text);
   animation: maintenance-screen-blink 1.2s steps(1, end) infinite;
 }
 
 .maintenance-screen__link {
-  color: var(--color-white);
+  color: var(--color-text);
   text-decoration: none;
   text-shadow:
-    0 0 12px color-mix(in srgb, var(--color-accent) 64%, transparent),
-    0 0 24px rgba(59, 130, 246, 0.3);
+    0 0 12px var(--color-accent-glow),
+    0 0 24px rgba(139, 92, 246, 0.28);
   transition:
     color var(--transition-fast),
     text-shadow var(--transition-fast);
@@ -82,7 +78,7 @@
 
 .maintenance-screen__link:hover,
 .maintenance-screen__link:focus-visible {
-  color: color-mix(in srgb, var(--color-accent) 24%, var(--color-white));
+  color: var(--color-accent-hover);
 }
 
 .maintenance-screen__link:focus-visible {

@@ -8,19 +8,17 @@
 @mixin scollbar {
   overflow-y: auto;
   scrollbar-width: thin;
-  scrollbar-color: $color-btn-bg $primary-color;
+  scrollbar-color: var(--color-accent-muted) var(--color-surface);
 }
 
 @mixin backdrop-bg {
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border-soft);
   background:
-    linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.075),
-      rgba(255, 255, 255, 0.032)
-    ),
-    rgba(9, 12, 20, 0.42);
+    var(--gradient-card),
+    var(--color-surface-glass);
+  box-shadow: var(--shadow-card);
   padding: 20px 14px;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }

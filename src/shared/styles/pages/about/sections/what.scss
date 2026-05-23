@@ -47,7 +47,7 @@
       rgba(255, 255, 255, 0.085),
       rgba(255, 255, 255, 0.026)
     ),
-    rgba(7, 10, 18, 0.52);
+    var(--color-surface-glass);
 }
 
 .what__card--featured::after {
@@ -95,7 +95,7 @@
   position: absolute;
   top: 6px;
   right: 18px;
-  color: rgba(255, 255, 255, 0.055);
+  color: color-mix(in srgb, var(--color-text) 6%, transparent);
   font-size: 132px;
   font-weight: 900;
   line-height: 0.85;
@@ -116,18 +116,12 @@
   min-width: 112px;
   gap: 4px;
   padding: 11px 12px;
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border-muted);
   background:
-    linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.09),
-      rgba(255, 255, 255, 0.036)
-    ),
-    rgba(8, 12, 20, 0.52);
-  box-shadow:
-    0 18px 52px rgba(0, 0, 0, 0.32),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    var(--gradient-card),
+    var(--color-surface-glass);
+  box-shadow: var(--shadow-card);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   animation: what-metric-float 6s ease-in-out infinite;
@@ -159,13 +153,13 @@
 }
 
 .what-showcase__metricLabel {
-  color: rgba(232, 238, 255, 0.52);
+  color: var(--color-text-muted);
   font-size: 11px;
   line-height: 1;
 }
 
 .what-showcase__metricValue {
-  color: rgba(255, 255, 255, 0.88);
+  color: var(--color-text);
   font-size: 14px;
   line-height: 1.1;
 }
@@ -250,7 +244,7 @@
 .what-grid__text {
   margin: 0;
   max-width: 100%;
-  color: rgba(232, 238, 255, 0.64);
+  color: var(--color-text-soft);
   line-height: 1.68;
   font-size: 14px;
 }

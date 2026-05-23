@@ -13,9 +13,7 @@
 }
 
 .process::before {
-  background:
-    linear-gradient(rgba(255, 255, 255, 0.032) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.032) 1px, transparent 1px);
+  background: var(--gradient-grid);
   background-size: 72px 72px;
   mask-image: linear-gradient(to bottom, #000, transparent 92%);
   opacity: 0.4;
@@ -49,7 +47,7 @@
 .process__subtitle {
   margin: 12px 0 0;
   max-width: 680px;
-  color: rgba(232, 238, 255, 0.64);
+  color: var(--color-text-soft);
   line-height: 1.65;
 }
 
@@ -133,25 +131,19 @@
   min-height: 148px;
   padding: 24px;
   overflow: hidden;
-  border-radius: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border-muted);
   background:
-    linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.088),
-      rgba(255, 255, 255, 0.028)
-    ),
-    rgba(12, 15, 24, 0.64);
-  box-shadow:
-    0 26px 80px rgba(0, 0, 0, 0.38),
-    inset 0 1px 0 rgba(255, 255, 255, 0.09);
+    var(--gradient-card),
+    var(--color-surface-glass);
+  box-shadow: var(--shadow-panel);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   transition:
-    transform 180ms ease,
-    border-color 180ms ease,
-    box-shadow 180ms ease,
-    background 180ms ease;
+    transform var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    background var(--transition-fast);
 }
 
 .process__content::before {
@@ -172,23 +164,16 @@
       transparent 42%
     );
   opacity: 0;
-  transition: opacity 180ms ease;
+  transition: opacity var(--transition-fast);
 }
 
 .process__item:hover .process__content {
   transform: translateY(-4px);
   border-color: var(--about-accent-border-strong);
   background:
-    linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.108),
-      rgba(255, 255, 255, 0.036)
-    ),
-    rgba(12, 15, 24, 0.74);
-  box-shadow:
-    0 34px 96px rgba(0, 0, 0, 0.46),
-    0 0 0 1px var(--about-accent-glow),
-    inset 0 1px 0 rgba(255, 255, 255, 0.11);
+    var(--gradient-card-hover),
+    var(--color-surface-glass-hover);
+  box-shadow: var(--shadow-card-hover);
 }
 
 .process__item:hover .process__content::before {
@@ -203,7 +188,7 @@
 
 .process__title {
   margin: 0 0 10px;
-  color: rgba(255, 255, 255, 0.94);
+  color: var(--color-text);
   font-size: 21px;
   font-weight: 850;
   line-height: 1.15;
@@ -213,7 +198,7 @@
 
 .process__text {
   margin: 0;
-  color: rgba(232, 238, 255, 0.68);
+  color: var(--color-text-soft);
   font-size: 15px;
   line-height: 1.72;
 }

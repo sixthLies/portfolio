@@ -40,14 +40,14 @@ export const OrbitLoader = () => {
       >
         <defs>
           <radialGradient id="orbit-loader-glow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="rgba(113, 2, 218, 0.68)" />
-            <stop offset="46%" stopColor="rgba(59, 130, 246, 0.22)" />
-            <stop offset="100%" stopColor="rgba(5, 3, 12, 0)" />
+            <stop offset="0%" stopColor="rgba(139, 92, 246, 0.68)" />
+            <stop offset="46%" stopColor="rgba(168, 85, 247, 0.22)" />
+            <stop offset="100%" stopColor="rgba(8, 9, 10, 0)" />
           </radialGradient>
           <linearGradient id="orbit-loader-arc" x1="30%" y1="0%" x2="80%" y2="100%">
             <stop offset="0%" stopColor="rgba(255, 255, 255, 0.92)" />
-            <stop offset="45%" stopColor="rgba(113, 2, 218, 0.95)" />
-            <stop offset="100%" stopColor="rgba(56, 223, 241, 0.9)" />
+            <stop offset="45%" stopColor="rgba(139, 92, 246, 0.95)" />
+            <stop offset="100%" stopColor="rgba(168, 85, 247, 0.9)" />
           </linearGradient>
           <filter id="orbit-loader-soft-glow" x="-80%" y="-80%" width="260%" height="260%">
             <feGaussianBlur stdDeviation="3.5" result="blur" />

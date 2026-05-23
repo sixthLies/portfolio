@@ -12,7 +12,7 @@
 .experience__intro,
 .experience__summary,
 .experience__item {
-  color: rgba(232, 238, 255, 0.64);
+  color: var(--color-text-soft);
   line-height: 1.68;
   font-size: 14px;
 }
@@ -60,9 +60,9 @@
   align-items: center;
   padding: 8px 12px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  background: rgba(255, 255, 255, 0.05);
-  color: rgba(255, 255, 255, 0.86);
+  border: 1px solid var(--color-border-muted);
+  background: var(--color-surface-active);
+  color: var(--color-text-soft);
   font-weight: 700;
   font-size: 12px;
   letter-spacing: 0.01em;
@@ -70,7 +70,7 @@
 
 .experience__index {
   color: color-mix(in srgb, var(--color-accent) 34%, var(--color-white));
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-family: var(--font-mono);
   font-size: 13px;
 }
 
@@ -104,13 +104,13 @@
 
 .experience__metric {
   padding: 7px 10px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(151, 150, 150, 0.045);
-  color: rgba(255, 255, 255, 0.88);
+  border: 1px solid var(--color-border-soft);
+  background: var(--color-surface-active);
+  color: var(--color-text-soft);
 }
 
 .experience__website {
-  color: rgba(255, 255, 255, 0.64);
+  color: var(--color-text-muted);
   font-size: 14px;
   text-decoration: none;
   margin-bottom: 10px;
@@ -158,9 +158,9 @@
 
 .experience__outcome {
   padding: 7px 9px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.045);
-  color: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--color-border-soft);
+  background: var(--color-surface-active);
+  color: var(--color-text-soft);
 }
 
 @include respond(md) {

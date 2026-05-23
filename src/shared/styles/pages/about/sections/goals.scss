@@ -15,9 +15,7 @@
 }
 
 .goals::before {
-  background:
-    linear-gradient(rgba(255, 255, 255, 0.032) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.032) 1px, transparent 1px);
+  background: var(--gradient-grid);
   background-size: 72px 72px;
   mask-image: linear-gradient(to bottom, #000, transparent 94%);
   opacity: 0.36;
@@ -77,26 +75,20 @@
   min-height: 100%;
   padding: 20px;
   overflow: hidden;
-  border-radius: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.115);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border-muted);
   background:
-    linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.08),
-      rgba(255, 255, 255, 0.026)
-    ),
-    rgba(10, 14, 23, 0.58);
-  box-shadow:
-    0 22px 70px rgba(0, 0, 0, 0.34),
-    inset 0 1px 0 rgba(255, 255, 255, 0.085);
+    var(--gradient-card),
+    var(--color-surface-glass);
+  box-shadow: var(--shadow-panel);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   animation: goals-card-float 6400ms ease-in-out infinite;
   transition:
-    transform 180ms ease,
-    border-color 180ms ease,
-    background 180ms ease,
-    box-shadow 180ms ease;
+    transform var(--transition-fast),
+    border-color var(--transition-fast),
+    background var(--transition-fast),
+    box-shadow var(--transition-fast);
 }
 
 .goals__card::before,
@@ -115,13 +107,9 @@
       rgba(255, 255, 255, 0.062),
       transparent 46%
     ),
-    radial-gradient(
-      circle at 18% 88%,
-      rgba(95, 180, 255, 0.08),
-      transparent 26%
-    );
+    radial-gradient(circle at 18% 88%, var(--color-accent-soft), transparent 26%);
   opacity: 0;
-  transition: opacity 180ms ease;
+  transition: opacity var(--transition-fast);
 }
 
 .goals__card::after {
@@ -146,16 +134,9 @@
       var(--about-accent-tint-strong),
       transparent 36%
     ),
-    linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.098),
-      rgba(255, 255, 255, 0.034)
-    ),
-    rgba(12, 17, 27, 0.68);
-  box-shadow:
-    0 30px 88px rgba(0, 0, 0, 0.44),
-    0 0 0 1px var(--about-accent-glow),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    var(--gradient-card-hover),
+    var(--color-surface-glass-hover);
+  box-shadow: var(--shadow-card-hover);
 }
 
 .goals__item:hover .goals__card::before {
@@ -178,7 +159,7 @@
   position: absolute;
   top: 6px;
   right: 18px;
-  color: rgba(255, 255, 255, 0.055);
+  color: color-mix(in srgb, var(--color-text) 6%, transparent);
   font-size: 132px;
   font-weight: 900;
   line-height: 0.85;
@@ -192,7 +173,7 @@
 
 .goals__text {
   margin: 0;
-  color: rgba(232, 238, 255, 0.76);
+  color: var(--color-text-soft);
   font-size: 14px;
   font-weight: 700;
   line-height: 1.64;
@@ -202,16 +183,12 @@
 .goals__item--1 .goals__card {
   min-height: 178px;
   background:
-    linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.096),
-      rgba(255, 255, 255, 0.032)
-    ),
-    rgba(10, 14, 23, 0.66);
+    var(--gradient-card-hover),
+    var(--color-surface-glass);
 }
 
 .goals__item--1 .goals__text {
-  color: rgba(255, 255, 255, 0.86);
+  color: var(--color-text);
   font-size: 16px;
   line-height: 1.58;
 }

@@ -8,7 +8,7 @@
   justify-content: center;
   align-items: center;
   padding: 10px;
-  background: rgba(0, 0, 0, 0.6);
+  background: var(--color-backdrop);
   backdrop-filter: blur(6px);
   opacity: 0;
   visibility: hidden;
@@ -22,13 +22,18 @@
   max-height: calc(100dvh - 20px);
   overflow: auto;
   padding: 18px 14px 16px;
-  border-radius: 20px;
-  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-xl);
+  background:
+    var(--gradient-card),
+    var(--color-surface);
   box-shadow: var(--shadow-modal);
   text-align: center;
   opacity: 0;
   transform: translateY(10px) scale(0.96);
-  transition: transform var(--transition-fast), opacity var(--transition-fast);
+  transition:
+    transform var(--transition-base),
+    opacity var(--transition-base);
 }
 
 .modal__close {
@@ -38,15 +43,15 @@
   width: 40px;
   height: 40px;
   border: none;
-  border-radius: 12px;
+  border-radius: var(--radius-md);
   background: transparent;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--color-text-soft);
   font-size: 20px;
   cursor: pointer;
 }
 
 .modal__close:hover {
-  color: var(--color-white);
+  color: var(--color-text);
 }
 
 @include respond(md) {
@@ -57,7 +62,7 @@
   .modal {
     max-height: calc(100dvh - 36px);
     padding: 28px 26px 24px;
-    border-radius: 24px;
+    border-radius: var(--radius-xl);
   }
 
   .modal__close {
