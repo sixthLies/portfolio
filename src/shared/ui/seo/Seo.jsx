@@ -24,6 +24,7 @@ export const Seo = ({
   themeColor = DEFAULT_SEO.themeColor,
   ogImage,
   ogType = DEFAULT_SEO.ogType,
+  robots,
   twitterImage = ogImage,
 }) => {
   const normalizedKeywords = normalizeKeywords(keywords)
@@ -36,6 +37,7 @@ export const Seo = ({
         <meta name="keywords" content={normalizedKeywords} />
       ) : null}
       <meta name="theme-color" content={themeColor} />
+      {robots ? <meta name="robots" content={robots} /> : null}
 
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />

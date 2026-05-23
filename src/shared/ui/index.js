@@ -18,3 +18,6 @@ export { Reveal } from "./reveal"
 
 // seo
 export { Seo } from "./seo"
+
+// maintenance
+export { MaintenanceScreen } from "./maintenance-screen"

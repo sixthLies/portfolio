@@ -19,6 +19,7 @@ export const DEFAULT_SEO_CONFIG = Object.freeze({
   keywords: ["портфолио", "frontend", "техническая поддержка", "автоматизация"],
   themeColor: "#09090f",
   ogImage: "/og/default-preview.jpg",
+  robots: undefined,
 })
 
 const createSeoConfig = (seo = {}) =>
@@ -29,6 +30,34 @@ const createSeoConfig = (seo = {}) =>
   })
 
 export const DEFAULT_SITE_VERSION_ID = "default"
+export const PUBLIC_WORKING_VERSION_ID = "technical-support"
+export const MAINTENANCE_VERSION_IDS = Object.freeze([
+  "automation",
+  "frontend",
+  DEFAULT_SITE_VERSION_ID,
+])
+
+export const MAINTENANCE_SCREEN_CONTENT = Object.freeze({
+  title: "Сайт обновляется",
+  progress: "█ █ █ █ █ █ █ █ █ █",
+  progressHighlight: "█ █ █ █",
+  progressValue: "77%",
+  workingVersionText: "Перейти на рабочую версию сайта",
+  workingVersionUrl: "www.dev9tov.com/l/technical-support",
+  seoTitle: "Версия обновляется — Данил",
+  seoDescription:
+    "Эта версия портфолио находится в обновлении. Доступна рабочая версия технической поддержки.",
+})
+
+export const isMaintenanceVersion = (versionId) => {
+  const activeVersionId = versionId ?? DEFAULT_SITE_VERSION_ID
+
+  return (
+    activeVersionId !== PUBLIC_WORKING_VERSION_ID &&
+    (MAINTENANCE_VERSION_IDS.includes(activeVersionId) ||
+      !SITE_VERSIONS[activeVersionId])
+  )
+}
 
 export const SITE_VERSIONS = Object.freeze({
   default: {
@@ -830,5 +859,15 @@ export const SITE_VERSIONS = Object.freeze({
 export const getSiteVersionContent = (versionId) =>
   SITE_VERSIONS[versionId] ?? SITE_VERSIONS[DEFAULT_SITE_VERSION_ID]
 
-export const getSiteVersionSeo = (versionId) =>
-  createSeoConfig(getSiteVersionContent(versionId).seo)
+export const getSiteVersionSeo = (versionId) => {
+  if (!isMaintenanceVersion(versionId)) {
+    return createSeoConfig(getSiteVersionContent(versionId).seo)
+  }
+
+  return createSeoConfig({
+    ...getSiteVersionContent(versionId).seo,
+    title: MAINTENANCE_SCREEN_CONTENT.seoTitle,
+    description: MAINTENANCE_SCREEN_CONTENT.seoDescription,
+    robots: "noindex, nofollow",
+  })
+}
